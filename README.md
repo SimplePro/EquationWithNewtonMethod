@@ -1,12 +1,12 @@
 EquationWithNewtonMethod
 --------------------
-- This repository is Project to solve Equation with NewtonMethod.
+- This repository is Project to solve Equation with NewtonMethod. 
 
 
 Info
 -----------
 python version - 3.8.6
-required library - fractions, PyQt5
+required library - fractions, PyQt5 
 
 
 manual
