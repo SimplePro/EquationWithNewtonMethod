@@ -20,3 +20,8 @@ Manual
 Preview
 ------------------------
 ![2021-07-03 20-18-48](https://user-images.githubusercontent.com/66504341/124352847-ebac8580-dc3d-11eb-8ea6-53a80b7ccf8a.gif)
+
+
+NewtonMethod
+--------------------
+https://simplepro.tistory.com/21
