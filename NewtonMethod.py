@@ -10,12 +10,14 @@ def newton_method(terms = [], unknown_variable='x') -> tuple:
 
     result_list = []
 
+    # 초기값 정하는 것.
     for i in range(1, 10000):
         a = equation.calculate(i, mode="default") - equation.calculate(i, mode="derivative")
         if a != 0:
             result_list.append(i)
             break
 
+    # 뉴턴메소드로 점진적으로 해를 구함.
     for i in range(10000):
         result_list.append(result_list[i] - (equation.calculate(result_list[i], mode="default") / equation.calculate(result_list[i], mode="derivative")))
 
