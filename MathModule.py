@@ -1,3 +1,23 @@
+
+def regex_term(term, unknown_variable='x') -> str:
+    term = term.replace(" ", '')
+
+    if term[0] not in ['+', '-']: term = "+" + term
+
+    if unknown_variable not in term:
+        return term + unknown_variable + "^0"
+
+    unknown_variable_index = term.index(unknown_variable)
+
+    if term[unknown_variable_index+2:] == '':
+        term += "^1"
+
+    if term[:unknown_variable_index] in ['+', '-']:
+        term = term.replace("+", "+1")
+        term = term.replace("-", "-1")
+
+    return term
+
 class Equation:
     def __init__(self, terms = [], unknown_variable = "x") -> None:
         self.terms = terms
