@@ -16,19 +16,13 @@ def newton_method(terms = [], unknown_variable='x') -> tuple:
             result_list.append(i)
             break
 
-    print(a)
-    print(equation.terms)
-    print(equation.derivative_terms)
-
     for i in range(10000):
         result_list.append(result_list[i] - (equation.calculate(result_list[i], mode="default") / equation.calculate(result_list[i], mode="derivative")))
 
         if result_list[i-1] == result_list[i]: break
 
         # 이렇게 허근을 판단하는지는 이유는 NewtonMethodMemo 파일을 확인.
-        elif i > 3 and abs(result_list[i-1] - result_list[i-2]) < abs(result_list[i-1] - result_list[i]):
-            print(result_list)
-            return "허근", "허근"
+        elif i > 3 and abs(result_list[i-1] - result_list[i-2]) < abs(result_list[i-1] - result_list[i]): return "허근", "허근"
     
     result_list[-1] = float(str(result_list[-1])[:16])
 
