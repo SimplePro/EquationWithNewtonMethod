@@ -43,8 +43,8 @@ class Equation:
         
         # if term[unknown_variable_index+2:] == '': return term[:unknown_variable_index]  # 일차식이라면 계수만 리턴
         # else:
-        coefficient = int(term[:unknown_variable_index])
-        quotient = int(term[unknown_variable_index+2:])
+        coefficient = float(term[:unknown_variable_index])
+        quotient = float(term[unknown_variable_index+2:])
 
         if quotient == 0: return '0'
         if quotient == 1: return str(coefficient)
@@ -59,7 +59,7 @@ class Equation:
     
 
     # 매개변수 x 에 대한 식의 값을 구하는 메소드
-    def calculate(self, x, mode="default") -> int:
+    def calculate(self, x, mode="default") -> float:
 
         terms = []
 
@@ -70,16 +70,16 @@ class Equation:
 
         for term in terms:
             if self.unknown_variable not in term:
-                result += int(term)
+                result += float(term)
                 continue  # 상수면 그냥 계산
             
             unknown_variable_index = term.index(self.unknown_variable)
             
-            if term[unknown_variable_index+2:] == '': result += int(int(term[:unknown_variable_index]) * x)
+            if term[unknown_variable_index+2:] == '': result += float(term[:unknown_variable_index]) * x
 
             else:
-                coefficient = int(term[:unknown_variable_index])
-                quotient = int(term[unknown_variable_index+2:])
+                coefficient = float(term[:unknown_variable_index])
+                quotient = float(term[unknown_variable_index+2:])
 
                 result += coefficient * (x ** quotient)
 
